@@ -1,6 +1,8 @@
 package com.authentication.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
@@ -8,7 +10,8 @@ import java.util.Objects;
 public class User {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String firstName;
 
@@ -22,7 +25,7 @@ public class User {
 
     private String role;
 
-    public User(int id, String firstName, String lastName, String email, String number, String password, String role) {
+    public User(Long id, String firstName, String lastName, String email, String number, String password, String role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -32,11 +35,11 @@ public class User {
         this.role = role;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
