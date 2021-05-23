@@ -1,6 +1,7 @@
 package com.authentication.controller;
 
 import com.authentication.exception.NoSignedUserFoundException;
+import com.authentication.util.ErrorConstant;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,7 +21,7 @@ public class ControllerAdviceException extends ResponseEntityExceptionHandler {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
         //logs
-        body.put("message", "No User List Available");
+        body.put("message", ErrorConstant.NoSignedUser);
         return new ResponseEntity<Map<String, Object>>(body, HttpStatus.NOT_FOUND);
     }
 }
