@@ -8,7 +8,7 @@ class AuthenticationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println("Testing................................................");
+		System.out.println("Testing Hi................................................");
 	}
 
 }
