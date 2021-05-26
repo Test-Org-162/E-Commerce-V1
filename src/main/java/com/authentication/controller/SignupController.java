@@ -38,4 +38,5 @@ public class SignupController {
     private ResponseEntity<List<User>> buildResponseUserList(List<User> source){
         return ResponseEntity.status(HttpStatus.CREATED).body(source);
     }
+
 }
